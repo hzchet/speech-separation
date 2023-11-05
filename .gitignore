@@ -1,7 +1,13 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
+
+.DS_STORE
+data/
+notebooks/
+saved/
+wandb/
 
 # C extensions
 *.so
