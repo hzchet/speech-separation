@@ -29,6 +29,6 @@ cp configs/spex_plus_stage3.json saved/models/final/config.json
 # Test
 In order to run inference and measure PESQ and SI-SDR metrics on the custom dataset, run
 ```bash
-python3 test.py -r saved/models/final/config.json -t <test-folder-data> -b 1
+python3 test.py -r saved/models/final/weights.pth -t <test-folder-data> -b 1
 ```
 where `<test-folder-data>` is a folder that contains 3 folders: refs, mix and targets. Files in each dir are named in the following way ID-mixed.wav, ID-ref.wav, ID-target.wav for mix, ref and target respectively.
