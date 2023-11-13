@@ -23,7 +23,7 @@ python3 install_weights.py
 ```
 - Copy the config into the same directory
 ```bash
-cp configs/spex_plus.json saved/models/final/config.json
+cp configs/spex_plus_stage3.json saved/models/final/config.json
 ```
 
 # Test
