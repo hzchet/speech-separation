@@ -151,6 +151,7 @@
         "wandb_run_name": "SpEx+",
         "len_epoch": null,
         "grad_norm_clip": 10,
-        "scheduler_lr_per_epoch": true
+        "scheduler_lr_per_epoch": true,
+        "lr_monitor": "valid_SI-SDR"
     }
 }

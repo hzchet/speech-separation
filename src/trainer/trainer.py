@@ -58,6 +58,7 @@ class Trainer(BaseTrainer):
         
         self.num_accumulation_iters = self.config["trainer"].get("num_accumulation_iters", 1)
         self.schedule_lr_per_epoch = self.config["trainer"].get("scheduler_lr_per_epoch", False)
+        self.lr_monitor = self.config["trainer"].get("lr_monitor", None)
 
     @staticmethod
     def move_batch_to_device(batch, device: torch.device):
@@ -132,7 +133,7 @@ class Trainer(BaseTrainer):
             log.update(**{f"{part}_{name}": value for name, value in val_log.items()})
 
         if self.lr_scheduler is not None and self.schedule_lr_per_epoch:
-            self._step_lr(log["test_snr0_SI-SDR"])
+            self._step_lr(log[self.lr_monitor])
         
         return log
     
