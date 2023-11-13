@@ -12,7 +12,7 @@ SI-SDR = $9.05$ and PESQ = $1.68$ were achieved on public test split by the fina
 git clone https://github.com/hzchet/speech-separation.git
 cd speech-separation
 ```
-- Change `WANDB_API_KEY`, `SAVE_DIR`, `DATA_DIR` variables in the Makefile, to specify where you want to save logs/weights and also where you want to store your data.
+- Change `WANDB_API_KEY` in Dockerfile and `SAVE_DIR`, `DATA_DIR` variables in the Makefile, to specify where you want to save logs/weights and also where you want to store your data.
 - Build and run Docker container in the interactive mode by running the following command:
 ```bash
 make build && make run
@@ -27,7 +27,8 @@ cp configs/spex_plus.json saved/models/final/config.json
 ```
 
 # Test
-In order to run inference and measure PESQ and SI-SDR metrics, run
+In order to run inference and measure PESQ and SI-SDR metrics on the custom dataset, run
 ```bash
 python3 test.py -r saved/models/final/config.json -t <test-folder-data> -b 1
 ```
+where `<test-folder-data>` is a folder that contains 3 folders: refs, mix and targets. And each of these folders should contain audios in the `ID-ref.wav`, `ID-target.wav`, `ID-mix.wav` format.
