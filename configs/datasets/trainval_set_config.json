@@ -1,0 +1,21 @@
+{
+    "name": "train_mixer",
+    "part": "train-clean-100",
+    "audio_template": "*.flac",
+    "mixture_generator": {
+        "type": "MixtureGenerator",
+        "args": {
+            "out_folder": "data/mixes_train_val",
+            "nfiles": 15000,
+            "test": false
+        },
+        "mix_args": {
+            "snr_levels": [-5, -3, 0],
+            "num_workers": 5,
+            "trim_db": 20,
+            "vad_db": 20,
+            "audio_len": 3,
+            "sr": 16000
+        }
+    }
+}

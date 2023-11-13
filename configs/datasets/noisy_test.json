@@ -1,0 +1,22 @@
+{
+    "name": "noisy_test",
+    "part": "test-clean",
+    "audio_template": "*.flac",
+    "mixture_generator": {
+        "type": "NoisyMixtureGenerator",
+        "args": {
+            "out_folder": "data/noisy_test",
+            "nfiles": 1000,
+            "test": true,
+            "noise_folder": "data/wham_noise/tt"
+        },
+        "mix_args": {
+            "snr_levels": [0],
+            "num_workers": 5,
+            "trim_db": null,
+            "vad_db": null,
+            "audio_len": null,
+            "sr": 16000
+        }
+    }
+}

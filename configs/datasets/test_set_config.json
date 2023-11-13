@@ -1,0 +1,21 @@
+{
+    "name": "test_mixer",
+    "part": "test-clean",
+    "audio_template": "*.flac",
+    "mixture_generator": {
+        "type": "MixtureGenerator",
+        "args": {
+            "out_folder": "data/mixes_test_snr0",
+            "nfiles": 10000,
+            "test": true
+        },
+        "mix_args": {
+            "snr_levels": [0],
+            "num_workers": 5,
+            "trim_db": null,
+            "vad_db": null,
+            "audio_len": null,
+            "sr": 16000
+        }
+    }
+}
