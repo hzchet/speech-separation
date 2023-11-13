@@ -6,6 +6,8 @@ matplotlib
 pandas
 
 speechbrain~=0.5.12
+librosa==0.10.1
+soundfile==0.12.1
 datasets
 torch_audiomentations
 editdistance
