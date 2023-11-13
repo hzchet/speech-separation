@@ -1,6 +1,5 @@
 NAME?=speech-separation
 GPUS?=0
-NOTEBOOKS?=/hdd/aidar/notebooks
 SAVE_DIR?=/hdd/aidar/ss_save_dir
 DATA_DIR?=/hdd/aidar/ss_data_dir
 USER?=$(shell whoami)
@@ -19,7 +18,6 @@ run:
 	--net=host \
 	-v $(PWD):/workspace \
 	-v $(SAVE_DIR):/workspace/saved \
-	-v $(NOTEBOOKS):/workspace/notebooks \
 	-v $(DATA_DIR):/workspace/data \
 	--name=$(NAME) \
 	$(NAME) \
